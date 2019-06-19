@@ -1,0 +1,11 @@
+{
+    "require": {
+        "codeception/codeception": "^3.0",
+        "flow/jsonpath": "^0.4.0",
+        "raml-org/raml-php-parser": "^4.3",
+        "allure-framework/allure-php-api": "^1.1",
+        "symfony/filesystem": "^4.3",
+        "fzaninotto/faker": "^1.8",
+        "vlucas/phpdotenv": "^3.4"
+    }
+}

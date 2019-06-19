@@ -1,0 +1,69 @@
+# suite config
+suites:
+    api:
+        actor: ApiTester
+        path: .
+        modules:
+            enabled:
+                - REST:
+                    url: http://petstore.swagger.io/v2
+                    depends: PhpBrowser
+                - \Helper\Credentials:
+                    username: admin@user.com
+                    password: '%PASSWORD%'
+
+params:
+    - .env
+    - env
+
+env:
+    staging:
+        modules:
+            enabled:
+                - REST:
+                    url: http://petstore.swagger.io/v3
+                    depends: PhpBrowser
+                - \Helper\Credentials:
+                    username: test@user.com
+                    password: 123456
+
+
+extensions:
+    enabled:
+        - \Group\AdminCreated:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#
+#
+#extensions:
+#    enabled:
+#        - Yandex\Allure\Codeception\AllureCodeception
+#    config:
+#        Yandex\Allure\Codeception\AllureCodeception:
+#            deletePreviousResults: false
+#            outputDirectory: allure
+#            ignoredAnnotations:
+#                - env
+#                - dataprovider
+
+paths:
+    tests: tests
+    output: tests/_output
+    data: tests/_data
+    support: tests/_support
+
+settings:
+    shuffle: false
+    lint: true
